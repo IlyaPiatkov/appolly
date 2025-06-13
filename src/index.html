@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/main.js" defer></script>
+    <title>Vite App</title>
+  </head>
+  <body>
+    <img src="/sprite.svg" alt="SVG Sprite" style="display: none" />
+    <div id="overlay"></div>
+    <section class="hero-section">
+      <div class="container">
+        <header class="header">
+          <button
+            id="open-menu"
+            class="hamburger"
+            aria-expanded="false"
+            type="button"
+            aria-label="Toggle menu"
+          >
+            <span class="hamburger__line"> Open menu </span>
+          </button>
+
+          <div id="menu" class="menu">
+            <button
+              id="close-menu"
+              class="menu__button"
+              aria-label="Close menu"
+              type="button"
+            >
+              X
+            </button>
+
+            <ul class="menu__container">
+              <li class="menu__item">
+                <a class="menu__link" href="#">Home</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">About</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Features</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Screenshot</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="header__logo-container">
+            <img src="/logo.svg" alt="Logo" />
+          </div>
+          <button class="button button_primary" type="button">DOWNLOAD</button>
+        </header>
+
+        <div class="hero-section__container">
+          <div class="hero-section__content">
+            <h1 class="hero-content__title">
+              A Great App Makes Your Life Better
+            </h1>
+            <p class="hero-content__description">
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Velit officia consequat duis enim velit mollit.
+            </p>
+            <p class="hero-section__caption">Download App Now</p>
+            <div class="download-box hero-section__buttons">
+              <a
+                class="download-box__button download-box__button_google"
+                href="#"
+              ></a>
+              <a
+                class="download-box__button download-box__button_apple"
+                href="#"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-section__image-container">
+        <img
+          class="hero-section__image"
+          src="/desktop-4.png"
+          alt="Hero Image"
+        />
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <h2 class="about__title">About Our App</h2>
+        <p class="about__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+          ante velit vitae.
+        </p>
+        <div class="about__image-container">
+          <img class="about__image" src="/desktop-5.png" alt="About Image" />
+        </div>
+
+        <div class="plates">
+          <div class="plate">
+            <svg class="plate__icon">
+              <use xlink:href="/sprite.svg#checkbox-circle-fill" />
+            </svg>
+            <h3 class="plate__title">Creative design</h3>
+            <p class="plate__description">
+              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+            </p>
+          </div>
+
+          <div class="plate">
+            <svg class="plate__icon">
+              <use xlink:href="/sprite.svg#checkbox-circle-fill" />
+            </svg>
+            <h3 class="plate__title">easy to use</h3>
+            <p class="plate__description">
+              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+            </p>
+          </div>
+
+          <div class="plate">
+            <svg class="plate__icon">
+              <use xlink:href="/sprite.svg#checkbox-circle-fill" />
+            </svg>
+            <h3 class="plate__title">Best user experince</h3>
+            <p class="plate__description">
+              Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app">
+      <h2 class="app__title">App Features</h2>
+      <p class="app__description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+        ante velit vitae.
+      </p>
+
+      <div class="app__container">
+        <div class="app__item">
+          <svg class="app_icon">
+            <use xlink:href="/sprite.svg#comment" />
+          </svg>
+          <h3 class="app__item-title">Full free chat</h3>
+          <p class="app__item-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div class="app__item">
+          <svg class="app_icon">
+            <use xlink:href="/sprite.svg#browser" />
+          </svg>
+          <h3 class="app__item-title">unlimiter features</h3>
+          <p class="app__item-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div class="app__item">
+          <svg class="app_icon">
+            <use xlink:href="/sprite.svg#vector-main" />
+          </svg>
+          <h3 class="app__item-title">awsome ui design</h3>
+          <p class="app__item-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div class="app__image-container">
+          <image
+            class="app__image"
+            src="/desktop-6.png"
+            alt="App Features Image"
+          />
+        </div>
+
+        <div class="app__item">
+          <svg class="app_icon">
+            <use xlink:href="/sprite.svg#cell-phone" />
+          </svg>
+          <h3 class="app__item-title">iso & androind version</h3>
+          <p class="app__item-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div class="app__item">
+          <svg class="app_icon">
+            <use xlink:href="/sprite.svg#eye-scanner" />
+          </svg>
+          <h3 class="app__item-title">retina ready greaphics</h3>
+          <p class="app__item-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div class="app__item">
+          <svg class="app_icon">
+            <use xlink:href="/sprite.svg#male-telemarketer" />
+          </svg>
+          <h3 class="app__item-title">24/7 support by real pepole</h3>
+          <p class="app__item-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="screenshot">
+      <div class="container">
+        <h2 class="screenshot__title">Checkout Our App Interface Look</h2>
+        <p class="screenshot__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+          ante velit vitae.
+        </p>
+      </div>
+
+      <div class="screenshot__slider">
+        <div id="swiper" class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper__slide">
+              <img
+                class="swiper__image"
+                src="/desktop-9.png"
+                alt="Screenshot 1"
+              />
+            </div>
+            <div class="swiper-slide swiper__slide">
+              <img
+                class="swiper__image"
+                src="/desktop-8.png"
+                alt="Screenshot 2"
+              />
+            </div>
+            <div class="swiper-slide swiper__slide">
+              <img
+                class="swiper__image"
+                src="/desktop-6.png"
+                alt="Screenshot 3"
+              />
+            </div>
+            <div class="swiper-slide swiper__slide">
+              <img
+                class="swiper__image"
+                src="/desktop-7.png"
+                alt="Screenshot 4"
+              />
+            </div>
+            <div class="swiper-slide swiper__slide">
+              <img
+                class="swiper__image"
+                src="/desktop-6.png"
+                alt="Screenshot 5"
+              />
+            </div>
+          </div>
+          <div class="swiper__next"></div>
+          <div class="swiper__prev"></div>
+          <div class="swiper__pagination"></div>
+        </div>
+      </div>
+
+      <div class="container container_top">
+        <h3 class="screenshot__title">Download App Now</h3>
+
+        <p class="screenshot__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+          ante velit vitae.
+        </p>
+
+        <div class="download-box screenshot__buttons">
+          <a
+            class="download-box__button download-box__button_large download-box__button_google"
+            href="#"
+          ></a>
+          <a
+            class="download-box__button download-box__button_large download-box__button_apple"
+            href="#"
+          ></a>
+        </div>
+
+        <div class="status">
+          <div class="status__item">
+            <svg class="status__icon">
+              <use xlink:href="/sprite.svg#download-2-fill" />
+            </svg>
+            <p class="status__number">59865</p>
+            <p class="status__text">Download</p>
+          </div>
+          <div class="status__item">
+            <svg class="status__icon">
+              <use xlink:href="/sprite.svg#thumb-up-fill" />
+            </svg>
+            <p class="status__number">29852</p>
+            <p class="status__text">Like</p>
+          </div>
+          <div class="status__item">
+            <svg class="status__icon">
+              <use xlink:href="/sprite.svg#star-fill" />
+            </svg>
+            <p class="status__number">1500</p>
+            <p class="status__text">5 star rating</p>
+          </div>
+        </div>
+        <div class="screenshot__img-container">
+          <img
+            class="screenshot__image"
+            src="/desktop-10.png"
+            alt="Screenshot 10"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="use-app">
+      <div class="container">
+        <h2 class="use-app__title">how to use the app perfectly</h2>
+        <p class="use-app__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+          ante velit vitae.
+        </p>
+
+        <div class="use-app__container">
+          <div class="use-app__video">
+            <svg class="use-app__icon">
+              <use xlink:href="/sprite.svg#video-fill" />
+            </svg>
+            <div class="use-app__mask use-app__mask_1"></div>
+            <div class="use-app__mask use-app__mask_2"></div>
+            <div class="use-app__mask use-app__mask_3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="team">
+      <div class="container">
+        <h2 class="team__title">Our reative team</h2>
+        <p class="team__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+          ante velit vitae.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card__image-container">
+              <img
+                class="card__image"
+                src="/person-1.jpg"
+                alt="Team Member 1"
+              />
+              <svg class="card__border">
+                <use xlink:href="/sprite.svg#border" />
+              </svg>
+            </div>
+            <h3 class="card__name">Carla Press</h3>
+            <p class="card__position">App Developer</p>
+            <div class="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+              nunc ante velit vitae. Est tellus vitae.
+            </div>
+            <div class="social card__social">
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_facebook">
+                  <use xlink:href="/sprite.svg#facebook-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_instagram">
+                  <use xlink:href="/sprite.svg#instagram-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_twitter">
+                  <use xlink:href="/sprite.svg#twitter-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_youtube">
+                  <use xlink:href="/sprite.svg#youtube-fill" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__image-container">
+              <img
+                class="card__image"
+                src="/person-2.jpg"
+                alt="Team Member 1"
+              />
+              <svg class="card__border">
+                <use xlink:href="/sprite.svg#border" />
+              </svg>
+            </div>
+            <h3 class="card__name">Graig fouse</h3>
+            <p class="card__position">UI/UX DESIGNER</p>
+            <div class="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+              nunc ante velit vitae. Est tellus vitae.
+            </div>
+            <div class="social card__social">
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_facebook">
+                  <use xlink:href="/sprite.svg#facebook-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_instagram">
+                  <use xlink:href="/sprite.svg#instagram-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_twitter">
+                  <use xlink:href="/sprite.svg#twitter-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_youtube">
+                  <use xlink:href="/sprite.svg#youtube-fill" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__image-container">
+              <img
+                class="card__image"
+                src="/person-3.jpg"
+                alt="Team Member 1"
+              />
+              <svg class="card__border">
+                <use xlink:href="/sprite.svg#border" />
+              </svg>
+            </div>
+            <h3 class="card__name">JOCELYN SEPTIMUS</h3>
+            <p class="card__position">WEBSITE DEVELOPER</p>
+            <div class="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+              nunc ante velit vitae. Est tellus vitae.
+            </div>
+            <div class="social card__social">
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_facebook">
+                  <use xlink:href="/sprite.svg#facebook-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_instagram">
+                  <use xlink:href="/sprite.svg#instagram-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_twitter">
+                  <use xlink:href="/sprite.svg#twitter-fill" />
+                </svg>
+              </a>
+              <a class="social__item" href="#">
+                <svg class="social__icon social__icon_youtube">
+                  <use xlink:href="/sprite.svg#youtube-fill" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback" >
+      
+    </section>
+  </body>
+</html>
