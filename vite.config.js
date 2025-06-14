@@ -1,11 +1,19 @@
-import { defineConfig } from 'vite'
-
+import { NodePackageImporter } from "sass";
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: 'src',
+  root: "src",
   build: {
-    outDir: '../dist',
-    emptyOutDir: true
+    outDir: "../dist",
+    emptyOutDir: true,
   },
-  publicDir: '../public'
-})
+  publicDir: "../public",
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+        importers: [new NodePackageImporter()],
+      },
+    },
+  },
+});

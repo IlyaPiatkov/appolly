@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: spacing("xxxl");
+
+  &__item {
+    position: relative;
+
+    &:nth-child(n + 2)::after {
+      content: "";
+      position: absolute;
+      right: 54px;
+      @include size(1px, 24px);
+      background-color: $color-text-secondary;
+    }
+  }
+
+  &__icon {
+    @include size(24px);
+    fill: $color-text;
+    @include transition(fill);
+  }
+}
+
+
+
+@each $platform,
+  $color
+    in (
+      facebook: $color-facebook,
+      youtube: $color-youtube,
+      twitter: $color-twitter,
+      instagram: $color-instagram
+    )
+{
+  .social__icon_#{$platform}:hover {
+    fill: $color;
+  }
+}

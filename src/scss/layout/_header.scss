@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  @include flex($justify: space-between, $align: center);
+  height: 40px;
+  padding: 3px 3px 3px 10px;
+  border-radius: 5px;
+  background-color: $color-white;
+  box-shadow: $shadow-default;
+
+  &__logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @include flex($justify: center, $align: center);
+    padding: 24px 10px;
+    border-radius: 5px;
+    background-color: $color-white;
+    box-shadow: $shadow-default;
+  }
+}

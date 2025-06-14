@@ -1,0 +1,58 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'variables' as *;
+
+// Typography
+@function font($family) {
+  @return map.get($font-family, $family);
+}
+
+@function font-size($size) {
+  @return map.get($font-size, $size);
+}
+
+@function font-weight($weight) {
+  @return map.get($font-weight, $weight);
+}
+
+@function line-height($height) {
+  @return map.get($line-height, $height);
+}
+
+// Spacing
+@function spacing($size) {
+  @return map.get($spacing, $size);
+}
+
+// Animation
+@function animation-duration($speed) {
+  @return map.get(map.get($animation, 'duration'), $speed);
+}
+
+@function animation-timing($curve) {
+  @return map.get(map.get($animation, 'timing'), $curve);
+}
+
+// Z-index
+@function z-index($layer) {
+  @if list.index($z-layers, $layer) {
+    @return (list.length($z-layers) - list.index($z-layers, $layer)) + 1;
+  }
+  
+  @warn "Layer `#{$layer}` not found in $z-layers. Valid layers are: #{$z-layers}";
+  @return null;
+}
+
+// Color
+@function color-opacity($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// Math
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function rem($px) {
+  @return #{strip-unit($px) / 16}rem;
+}

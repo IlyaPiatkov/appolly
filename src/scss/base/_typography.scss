@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+:root {
+  font-family: font("base");
+  font-optical-sizing: auto;
+  font-weight: font-weight("regular");
+  font-style: normal;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: font("base");
+  font-size: font-size("base");
+  line-height: line-height("base");
+  color: $color-text;
+}
+
+h1,
+.h1 {
+  font-size: font-size("h1");
+  font-weight: font-weight("semibold");
+  line-height: line-height("base");
+  text-transform: uppercase;
+}
+
+h2,
+.h2 {
+  font-size: font-size("h2");
+  font-weight: font-weight("semibold");
+  line-height: line-height("base");
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

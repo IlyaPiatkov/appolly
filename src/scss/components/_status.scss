@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.status {
+  margin-top: 60px;
+  @include flex($justify: center, $gap: spacing("md"));
+
+  &__item {
+    @include flex($direction: column, $align: center);
+    min-width: 96px;
+    padding: 12px 3px;
+    border-radius: 5px;
+    background-color: $color-primary;
+    color: $color-white;
+    @include card-shadow;
+  }
+
+  &__icon {
+    @include size(18px);
+    fill: $color-white;
+  }
+
+  &__number {
+    margin-top: 6px;
+    font-weight: 600;
+    font-size: font-size("h2");
+    line-height: line-height("base");
+  }
+}

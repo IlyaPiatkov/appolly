@@ -1,0 +1,79 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.use-app {
+  @include section-padding;
+  padding-bottom: 126px;
+  background-image: url("/desktop-3.png");
+  background-size: cover;
+  color: $color-white;
+
+  &__title {
+    @include section-title;
+  }
+
+  &__description {
+    @include section-description;
+  }
+
+  &__container {
+    margin-top: spacing('xl');
+    position: absolute;
+    width: calc(100% - spacing('xl'));
+  }
+
+  &__video {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url("/youtube-video.jpg");
+    background-size: cover;
+
+    &:hover {
+      box-shadow: 0 10px 100px 0 rgba($color-black, 0.3);
+    }
+
+    &::after {
+      content: "";
+      @include position(absolute, 0, 0, 0, 0);
+      background: rgba($color-primary, 0.4);
+    }
+  }
+
+  &__icon {
+    @include position(absolute, 50%, null, null, 50%);
+    transform: translate(-50%, -50%);
+    @include size(18px);
+    fill: $color-primary;
+    z-index: z-index('video-icon');
+  }
+
+  &__mask {
+    @include position(absolute, 50%, null, null, 50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: z-index('video-mask');
+
+    &_1 {
+      @include size(50px);
+      background: rgba($color-white, 1);
+    }
+
+    &_2 {
+      @include size(60px);
+      background: rgba($color-white, 0.7);
+    }
+
+    &_3 {
+      @include size(70px);
+      background: rgba($color-white, 0.6);
+    }
+  }
+
+  &__image {
+    margin-top: spacing('xl');
+    width: calc(100% - #{spacing('xl')});
+  }
+}

@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.overlay {
+  @include position(fixed, 0, 0, 0, 0);
+  z-index: z-index('overlay');
+}
+
+.download-box {
+  @include flex($gap: spacing('sm'));
+
+  &__button {
+    display: inline-block;
+    @include size(110px, 34px);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &_large {
+      @include size(150px, 50px);
+    }
+
+    &_google {
+      background-image: url("/google-play.png");
+    }
+
+    &_apple {
+      background-image: url("/app-store.png");
+    }
+  }
+}
+
+.gap {
+  @include flex($gap: spacing('sm'));
+}

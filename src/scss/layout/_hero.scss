@@ -1,0 +1,92 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.hero-section {
+  padding: 40px 0 120px;
+  background-image: url("/desktop-3.png");
+  background-size: cover;
+
+  &__container {
+    position: relative;
+    margin: 110px 20px 0 0;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 100%;
+      height: calc(100% + 40px);
+      border: 10px solid #7572ff;
+      z-index: -1;
+    }
+  }
+
+  &__content {
+    padding: 30px 18px;
+    background-color: $color-white;
+    margin-top: spacing('xl');
+  }
+
+  &__caption {
+    margin-top: spacing('xl');
+    font-weight: 600;
+    font-size: font-size('h2');
+    text-transform: uppercase;
+  }
+
+  &__buttons {
+    margin-top: spacing('xxl');
+  }
+
+  &__image-container {
+    @include flex($justify: center);
+    margin-top: spacing('xxl');
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    transform: translateX(20%);
+  }
+}
+
+.hero-content {
+  &__title {
+    font-weight: 600;
+    font-size: font-size('h1');
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: $color-primary;
+  }
+
+  &__description {
+    margin-top: spacing('md');
+    font-size: font-size('base');
+    line-height: 1.5;
+    color: $color-text-secondary;
+  }
+}
+
+.hero {
+  &__content {
+    margin-top: spacing('xl');
+  }
+
+  &__description {
+    margin-top: spacing('md');
+  }
+
+  &__buttons {
+    margin-top: spacing('xxl');
+  }
+
+  &__video {
+    &-button {
+      margin-top: spacing('md');
+    }
+  }
+}

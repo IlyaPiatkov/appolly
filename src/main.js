@@ -1,6 +1,7 @@
 import Swiper from "swiper/bundle";
 
 
+
 const openButton = document.getElementById("open-menu");
 const closeButton = document.getElementById("close-menu");
 

@@ -1,0 +1,49 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.plates {
+  margin-top: spacing('xxl');
+
+  > :nth-child(n + 2) {
+    margin-top: spacing('lg');
+  }
+}
+
+.plate {
+  position: relative;
+  padding: spacing('md') spacing('md') spacing('sm') 60px;
+  border-radius: 5px;
+  background-color: $color-white;
+  box-shadow: $shadow-default;
+  transition: $transition-slow;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+
+  &__title {
+    font-size: font-size("h2");
+    font-weight: font-weight("semibold");
+    line-height: line-height("base");
+    text-transform: uppercase;
+    color: $color-text;
+  }
+
+  &__description {
+    position: relative;
+    margin-top: spacing('xs');
+    font-size: spacing('base');
+    line-height: spacing('base');
+    color: $color-text-secondary;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    fill: $color-primary;
+  }
+}

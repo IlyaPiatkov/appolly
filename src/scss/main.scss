@@ -1,0 +1,38 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'abstracts/functions' as *;
+
+@use 'base/reset';
+@use 'base/typography';
+
+@use 'components/buttons';
+@use 'components/menu';
+@use 'components/plates';
+@use 'components/cards';
+@use 'components/social';
+@use 'components/slider';
+@use 'components/status';
+
+@use 'layout/header';
+@use 'layout/hero';
+@use 'layout/about';
+@use 'layout/app';
+@use 'layout/screenshot';
+@use 'layout/team';
+@use 'layout/use-app';
+
+@use 'utils/utilities';
+
+.container {
+  padding: 0 spacing('md');
+
+  &_top {
+    margin-top: spacing('xxl');
+  }
+}
+
+.section {
+  &__title {
+    margin-top: spacing('xxl');
+  }
+}

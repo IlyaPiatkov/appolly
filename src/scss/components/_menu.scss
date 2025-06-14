@@ -1,0 +1,95 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hamburger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+
+  &__line {
+    &,
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background-color: $color-text;
+    }
+
+    &::before {
+      content: "";
+      top: -8px;
+    }
+
+    &::after {
+      content: "";
+      top: 8px;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  padding: 66px 40px;
+  border-radius: 5px;
+  background-color: $color-white;
+  box-shadow: $shadow-default;
+  z-index: 100;
+  transition: left 0.3s ease-in-out;
+
+  &_open {
+    left: 0;
+  }
+
+  &__button {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: $color-primary;
+    color: $color-white;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-primary-light;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__container > :nth-child(n + 2) {
+    margin-top: 25px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}

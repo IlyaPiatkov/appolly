@@ -1,0 +1,74 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.cards {
+  margin-top: spacing('xl');
+  @include flex($direction: column, $gap: spacing('xl'));
+}
+
+.card {
+  position: relative;
+  padding: spacing('xl') spacing('sm') spacing('xl');
+  border-radius: 10px;
+  background-color: $color-white;
+  overflow: hidden;
+  @include card-shadow;
+
+  &__image {
+      padding: 3%;
+      width: 100%;
+      border-radius: 50%;
+
+    &-container {
+      position: relative;
+      padding: 0 spacing('xl');
+    }
+  }
+
+  &__border {
+    position: absolute;
+    right: 1px;
+    bottom: 3px;
+    @include size(100%);
+    animation: rotate animation-duration('slow') linear infinite;
+  }
+
+  &__name {
+    margin-top: spacing('xxl');
+    font-weight: font-weight('semibold');
+    font-size: font-size('h1');
+    line-height: line-height('base');
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__position {
+    font-weight: font-weight('semibold');
+    font-size: font-size('h2');
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-text-secondary;
+  }
+
+  &__description {
+    margin-top: spacing('sm');
+    font-size: font-size('base');
+    line-height: line-height('base');
+    text-align: center;
+    color: $color-text-secondary;
+  }
+
+  &__social {
+    margin-top: spacing('xl');
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
