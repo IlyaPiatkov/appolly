@@ -26,6 +26,16 @@
     margin-top: spacing('xl');
     @include flex($justify: center, $gap: spacing('md'));
     padding: spacing('xs');
+
+    &_white {
+        .swiper__bullet {
+          background-color: $color-white;
+        }
+    
+        .swiper__bullet_active::after {
+          border: 1px solid $color-white;
+        }
+    }
   }
 
   &__bullet {

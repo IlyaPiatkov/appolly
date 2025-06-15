@@ -12,6 +12,7 @@
 @use 'components/social';
 @use 'components/slider';
 @use 'components/status';
+@use 'components/link';
 
 @use 'layout/header';
 @use 'layout/hero';
@@ -20,11 +21,16 @@
 @use 'layout/screenshot';
 @use 'layout/team';
 @use 'layout/use-app';
+@use 'layout/feedback';
+@use 'layout/blog';
+@use 'layout/contact';
+@use 'layout/footer';
 
 @use 'utils/utilities';
 
 .container {
-  padding: 0 spacing('md');
+  padding-left: spacing('md');
+  padding-right: spacing('md');
 
   &_top {
     margin-top: spacing('xxl');

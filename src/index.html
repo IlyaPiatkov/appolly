@@ -21,7 +21,7 @@
   <body>
     <img src="/sprite.svg" alt="SVG Sprite" style="display: none" />
     <div id="overlay"></div>
-    <section class="hero-section">
+    <section class="hero-section" id="home">
       <div class="container">
         <header class="header">
           <button
@@ -46,19 +46,28 @@
 
             <ul class="menu__container">
               <li class="menu__item">
-                <a class="menu__link" href="#">Home</a>
+                <a class="menu__link" href="#home" data-anchor="home">Home</a>
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#">About</a>
+                <a class="menu__link" href="#about" data-anchor="about"
+                  >About</a
+                >
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#">Features</a>
+                <a class="menu__link" href="#feature" data-anchor="feature"
+                  >Features</a
+                >
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#">Screenshot</a>
+                <a
+                  class="menu__link"
+                  href="#screenshot"
+                  data-anchor="screenshot"
+                  >Screenshot</a
+                >
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#">Blog</a>
+                <a class="menu__link" href="#blog" data-anchor="blog">Blog</a>
               </li>
             </ul>
           </div>
@@ -101,7 +110,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
       <div class="container">
         <h2 class="about__title">About Our App</h2>
         <p class="about__description">
@@ -146,7 +155,7 @@
       </div>
     </section>
 
-    <section class="app">
+    <section id="feature" class="app">
       <h2 class="app__title">App Features</h2>
       <p class="app__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
@@ -232,8 +241,8 @@
         </p>
       </div>
 
-      <div class="screenshot__slider">
-        <div id="swiper" class="swiper">
+      <div id="screenshot" class="screenshot__slider">
+        <div id="screenshot-swiper" class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide swiper__slide">
               <img
@@ -482,6 +491,276 @@
         </div>
       </div>
     </section>
-    <section class="feedback"></section>
+    <section class="feedback">
+      <div class="container">
+        <h2 class="feedback__title">Our Happy Customers</h2>
+        <p class="feedback__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+          ante velit vitae.
+        </p>
+      </div>
+
+      <div class="feedback__slider">
+        <div id="feedback-swiper" class="swiper feedback__swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide card card_xs">
+              <div class="card__image-container">
+                <img class="card__image" src="/person-4.jpg" alt="Ann Lubin" />
+              </div>
+              <h3 class="card__name">Ann Lubin</h3>
+              <p class="card__position">CO-FUNDER</p>
+              <p class="card__description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.
+              </p>
+            </div>
+            <div class="swiper-slide card card_xs">
+              <div class="card__image-container">
+                <img
+                  class="card__image"
+                  src="/person-6.jpg"
+                  alt="Josefin Linder"
+                />
+              </div>
+              <h3 class="card__name">Josefin Linder</h3>
+              <p class="card__position">CEO</p>
+              <p class="card__description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.
+              </p>
+            </div>
+            <div class="swiper-slide card card_xs">
+              <div class="card__image-container">
+                <img class="card__image" src="/person-5.jpg" alt="Jena Orbit" />
+              </div>
+              <h3 class="card__name">Jena Orbit</h3>
+              <p class="card__position">CO-FUNDER</p>
+              <p class="card__description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.
+              </p>
+            </div>
+            <div class="swiper-slide card card_xs">
+              <div class="card__image-container">
+                <img class="card__image" src="/person-4.jpg" alt="Ann Lubin" />
+              </div>
+              <h3 class="card__name">Ann Lubin</h3>
+              <p class="card__position">CO-FUNDER</p>
+              <p class="card__description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.
+              </p>
+            </div>
+            <div class="swiper-slide card card_xs">
+              <div class="card__image-container">
+                <img
+                  class="card__image"
+                  src="/person-6.jpg"
+                  alt="Josefin Linder"
+                />
+              </div>
+              <h3 class="card__name">Josefin Linder</h3>
+              <p class="card__position">CEO</p>
+              <p class="card__description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.
+              </p>
+            </div>
+          </div>
+          <div class="swiper__pagination swiper__pagination_white"></div>
+        </div>
+      </div>
+    </section>
+    <section id="blog" class="blog">
+      <div class="container">
+        <h2 class="blog__title">Latest Blog Posts</h2>
+        <p class="blog__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+          ante velit vitae.
+        </p>
+
+        <div class="cards">
+          <article class="card card_xxxs">
+            <img
+              class="card__image card__image_rectangle"
+              src="/news-1.jpg"
+              alt="2021: An opportunity for Snapchatters to start fr"
+            />
+
+            <div class="card__content">
+              <h3 class="card__title">
+                2021: An opportunity for Snapchatters to start fr
+              </h3>
+
+              <p class="card__description card__description_left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                nunc ante velit vitae. Est tellus vitae.
+              </p>
+
+              <a class="link card__link" href="#">Read more</a>
+            </div>
+          </article>
+
+          <article class="card card_xxxs">
+            <img
+              class="card__image card__image_rectangle"
+              src="/news-2.jpg"
+              alt="Global Partner Solutions: A Partnership of Innova"
+            />
+
+            <div class="card__content">
+              <h3 class="card__title">
+                Global Partner Solutions: A Partnership of Innova
+              </h3>
+
+              <p class="card__description card__description_left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                nunc ante velit vitae. Est tellus vitae.
+              </p>
+
+              <a class="link card__link" href="#">Read more</a>
+            </div>
+          </article>
+
+          <article class="card card_xxxs">
+            <img
+              class="card__image card__image_rectangle"
+              src="/news-3.jpg"
+              alt="2021: An opportunity for Snapchatters to start fr"
+            />
+
+            <div class="card__content">
+              <h3 class="card__title">
+                2021: An opportunity for Snapchatters to start fr
+              </h3>
+
+              <p class="card__description card__description_left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+                nunc ante velit vitae. Est tellus vitae.
+              </p>
+
+              <a class="link card__link" href="#">Read more</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="card card_xxs">
+          <div class="contact__icon-wrap">
+            <div class="contact__icon-container">
+              <svg class="contact__icon">
+                <use xlink:href="/sprite.svg#mail-fill" />
+              </svg>
+            </div>
+          </div>
+
+          <a class="contact__text" href="mailto:info.design@gmail.com"
+            >info.design@gmail.com</a
+          >
+
+          <div class="contact__divider"></div>
+
+          <div class="contact__icon-wrap">
+            <div class="contact__icon-container">
+              <svg class="contact__icon">
+                <use xlink:href="/sprite.svg#phone" />
+              </svg>
+            </div>
+          </div>
+
+          <a class="contact__text" href="tel:+8803216559985"
+            >+880 321 655 9985</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer container">
+      <div class="footer__content">
+        <h2 class="footer__logo">Logo</h2>
+        <p class="footer__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
+          ante velit vitae. Est tellus vitae, nullam lobortis enim.
+        </p>
+
+        <div class="social social_white social_start footer__socials">
+          <a class="social__item" href="#">
+            <svg class="social__icon social__icon_facebook">
+              <use xlink:href="/sprite.svg#facebook-fill" />
+            </svg>
+          </a>
+          <a class="social__item" href="#">
+            <svg class="social__icon social__icon_instagram">
+              <use xlink:href="/sprite.svg#instagram-fill" />
+            </svg>
+          </a>
+          <a class="social__item" href="#">
+            <svg class="social__icon social__icon_twitter">
+              <use xlink:href="/sprite.svg#twitter-fill" />
+            </svg>
+          </a>
+          <a class="social__item" href="#">
+            <svg class="social__icon social__icon_youtube">
+              <use xlink:href="/sprite.svg#youtube-fill" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Quick Links</h3>
+        <ul class="footer__links">
+          <li class="footer__link-item">
+            <a class="footer__link" href="#about" data-anchor="about">About</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#features" data-anchor="features"
+              >Features</a
+            >
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#screenshot" data-anchor="screenshot"
+              >Screenshot</a
+            >
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#blog" data-anchor="blog">Blog</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">news letter</h3>
+        <p class="footer__text">
+          Subscribe our newsletter to get our latest update & news
+        </p>
+
+        <form id="subscribe-form" class="footer__form">
+          <input
+            class="footer__input"
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            required
+          />
+          <button class="button button_primary footer__button" type="submit">
+            <svg class="footer__icon-button">
+              <use xlink:href="/sprite.svg#send-plane-2-fill" />
+            </svg>
+          </button>
+        </form>
+      </div>
+      <div class="footer__content footer__content_divider">
+        <div class="footer__copyright">
+          <svg class="footer__icon-copyright">
+            <use xlink:href="/sprite.svg#copyright-line" />
+          </svg>
+          <p>Copyright 2021 .Ojjomedia. All Right Reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

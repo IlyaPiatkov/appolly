@@ -1,6 +1,7 @@
 // Colors
 $color-primary: #5956e9;
 $color-primary-light: rgba(89, 86, 233, 0.8);
+$color-primary-dark: #232233;
 $color-text: #232233;
 $color-text-secondary: #6c6c72;
 $color-white: #fff;
@@ -62,6 +63,7 @@ $spacing: (
   "sm": 8px,
   "md": 18px,
   "lg": 24px,
+  "l" : 32px,
   "xl": 40px,
   "xxl": 48px,
   "xxxl": 60px,

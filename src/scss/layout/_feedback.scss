@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+
+.feedback {
+    padding: spacing('xxxl') 0;
+    background-image: url("/desktop-3.png");
+    background-size: cover;
+    
+    &__title {
+        @include section-title;
+        color: $color-white;
+    }
+
+    &__description {
+        @include section-description;
+        color: $color-white;
+    }
+
+    &__swiper {
+        margin-top: 32px
+    }
+}

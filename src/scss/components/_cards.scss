@@ -1,28 +1,33 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .cards {
-  margin-top: spacing('xl');
-  @include flex($direction: column, $gap: spacing('xl'));
+  margin-top: spacing("xl");
+  @include flex($direction: column, $gap: spacing("xl"));
 }
 
 .card {
   position: relative;
-  padding: spacing('xl') spacing('sm') spacing('xl');
+  padding: spacing("xl") spacing("sm") spacing("xl");
   border-radius: 10px;
   background-color: $color-white;
   overflow: hidden;
   @include card-shadow;
 
   &__image {
-      padding: 3%;
-      width: 100%;
-      border-radius: 50%;
+    padding: 3%;
+    width: 100%;
+    border-radius: 50%;
 
     &-container {
       position: relative;
-      padding: 0 spacing('xl');
+      padding: 0 spacing("xl");
+    }
+
+    &_rectangle {
+      padding: 0;
+      border-radius: 0;
     }
   }
 
@@ -31,36 +36,79 @@
     right: 1px;
     bottom: 3px;
     @include size(100%);
-    animation: rotate animation-duration('slow') linear infinite;
+    animation: rotate animation-duration("slow") linear infinite;
   }
 
   &__name {
-    margin-top: spacing('xxl');
-    font-weight: font-weight('semibold');
-    font-size: font-size('h1');
-    line-height: line-height('base');
+    margin-top: spacing("xxl");
+    font-weight: font-weight("semibold");
+    font-size: font-size("h1");
+    line-height: line-height("base");
     text-transform: uppercase;
     text-align: center;
   }
 
   &__position {
-    font-weight: font-weight('semibold');
-    font-size: font-size('h2');
+    font-weight: font-weight("semibold");
+    font-size: font-size("h2");
     text-transform: uppercase;
     text-align: center;
     color: $color-text-secondary;
   }
 
   &__description {
-    margin-top: spacing('sm');
-    font-size: font-size('base');
-    line-height: line-height('base');
+    margin-top: spacing("md");
+    font-size: font-size("base");
+    line-height: line-height("base");
     text-align: center;
     color: $color-text-secondary;
+
+    &_left {
+      text-align: left;
+    }
   }
 
   &__social {
-    margin-top: spacing('xl');
+    margin-top: spacing("xl");
+  }
+
+  &__content {
+    padding: spacing("l") spacing("md");
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: font-size("h2");
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    margin-top: spacing("md");
+  }
+
+  &_xs {
+    padding: spacing("md") spacing("sm");
+
+    .card__image-container {
+      padding: 0 140px;
+    }
+
+    .card__name {
+      margin-top: 12px;
+    }
+
+    .card__position {
+      font-size: font-size("base");
+    }
+  }
+
+  &_xxs {
+    padding: spacing("l") spacing("sm");
+  }
+
+  &_xxxs {
+    padding: 0;
   }
 }
 

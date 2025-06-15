@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.contact {
+  text-align: center;
+  background: linear-gradient(180deg, $color-white 50%, $color-primary-dark 50%);
+
+  &__icon {
+    @include size(17px, 15px);
+    fill: $color-white;
+  }
+
+  &__icon-wrap {
+    @include flex($justify: center);
+  }
+
+  &__icon-container {
+    @include flex($justify: center, $align: center);
+    @include size(50px);
+    border-radius: 50%;
+    background-color: $color-primary;
+  }
+
+  &__text {
+    display: inline-block;
+    margin-top: spacing("md");
+    font-size: font-size("h2");
+    font-weight: font-weight("semibold");
+    line-height: line-height("base");
+    text-transform: uppercase;
+  }
+
+  &__divider {
+    padding: spacing("md") 30% spacing("lg");
+    height: 4px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 4px;
+      background-color: $color-black;
+    }
+  }
+}

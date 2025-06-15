@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.blog {
+    @include section-padding;
+
+    &__title {
+        @include section-title;
+    }
+
+    &__description {
+        @include section-description;
+        color: $color-text-secondary;
+    }
+}

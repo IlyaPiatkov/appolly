@@ -3,9 +3,7 @@
 @use "../abstracts/functions" as *;
 
 .social {
-  display: flex;
-  justify-content: center;
-  gap: spacing("xxxl");
+  @include flex($gap: spacing("xxxl"), $justify: center);
 
   &__item {
     position: relative;
@@ -24,6 +22,16 @@
     fill: $color-text;
     @include transition(fill);
   }
+
+  &_white {
+    .social__icon {
+      fill: $color-white;
+    }
+  }
+
+  &_start {
+    justify-content: left;
+  } 
 }
 
 

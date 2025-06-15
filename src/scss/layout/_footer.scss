@@ -1,0 +1,85 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.footer {
+  display: grid;
+  gap: spacing("xxxl") 0;
+  padding-top: spacing("xxxl");
+  padding-bottom: spacing("md");
+  background-color: $color-primary-dark;
+  color: $color-white;
+
+  &__logo {
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-top: spacing("xs");
+  }
+
+  &__socials {
+    margin-top: spacing("l");
+  }
+
+  &__title {
+    @include section-title;
+    text-align: left;
+  }
+
+  &__links {
+    margin-top: spacing("md");
+
+    & > :nth-child(n + 2) {
+      margin-top: spacing("md");
+    }
+  }
+
+  &__form {
+    position: relative;
+    margin-top: spacing("xxl");
+  }
+
+  &__input {
+    padding: 13px spacing("xxl") 13px spacing("md");
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    font-size: font-size("base");
+    line-height: line-height("base");
+  }
+
+  &__button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    padding: 12px 14px;
+    @include flex($align: center, $justify: center);
+  }
+
+  &__icon-button {
+    @include size(18px, 21px);
+    fill: $color-white;
+  }
+
+  &__content {
+    &_divider {
+      border-top: 1px solid $color-white;
+    }
+  }
+
+  &__copyright {
+    @include flex($justify: center, $align: center);
+    margin-top: spacing("md");
+
+    & > :nth-child(n + 2) {
+      margin-left: spacing("md");
+    }
+  }
+
+  &__icon-copyright {
+    @include size(16px, 16px);
+    fill: $color-white;
+  }
+}

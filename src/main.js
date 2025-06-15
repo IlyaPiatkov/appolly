@@ -1,27 +1,14 @@
 import Swiper from "swiper/bundle";
 
+import { onSubscribeForm } from "./js/subscribe-form";
+import { initializeMenu } from "./js/menu";
+import { onClickLinks } from "./js/links";
 
+onSubscribeForm();
+initializeMenu();
+onClickLinks();
 
-const openButton = document.getElementById("open-menu");
-const closeButton = document.getElementById("close-menu");
-
-const menu = document.getElementById("menu");
-const overlay = document.getElementById("overlay");
-
-const onCloseMenu = () => {
-  menu.classList.remove("menu_open");
-  overlay.classList.remove("overlay");
-};
-
-openButton.addEventListener("click", () => {
-  menu.classList.add("menu_open");
-  overlay.classList.add("overlay");
-});
-
-closeButton.addEventListener("click", onCloseMenu);
-overlay.addEventListener("click", onCloseMenu);
-
-new Swiper("#swiper", {
+new Swiper("#screenshot-swiper", {
   autoplay: {
     delay: 3000,
   },
@@ -50,4 +37,29 @@ new Swiper("#swiper", {
     prevEl: ".swiper__prev",
   },
   slideActiveClass: "swiper__slide_active",
+});
+
+new Swiper("#feedback-swiper", {
+  autoplay: {
+    delay: 3000,
+  },
+  slidesPerView: 3,
+  spaceBetween: -340,
+  effect: "coverflow",
+  grabCursor: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: false,
+    scale: 0.9,
+  },
+  loop: true,
+  pagination: {
+    el: ".swiper__pagination",
+    clickable: true,
+    bulletClass: "swiper__bullet",
+    bulletActiveClass: "swiper__bullet_active",
+  },
 });
