@@ -2,23 +2,37 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/functions" as *;
 
-
 .feedback {
-    padding: spacing('xxxl') 0;
+  @include section-padding;
+
+  & {
     background-image: url("/desktop-3.png");
     background-size: cover;
-    
-    &__title {
-        @include section-title;
-        color: $color-white;
-    }
+  }
 
-    &__description {
-        @include section-description;
-        color: $color-white;
-    }
+  &__title {
+    @include section-title;
 
-    &__swiper {
-        margin-top: 32px
+    & {
+      color: $color-white;
     }
+  }
+
+  &__description {
+    @include section-description;
+
+    & {
+      color: $color-white;
+    }
+  }
+
+  &__swiper {
+    margin-top: spacing("xl");
+
+    @include respond-to("md") {
+      @include container;
+
+      margin-top: spacing("l");
+    }
+  }
 }

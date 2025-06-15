@@ -1,16 +1,36 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .hero-section {
-  padding: 40px 0 120px;
+  padding: spacing("xl") 0 120px;
   background-image: url("/desktop-3.png");
   background-size: cover;
 
+  @include respond-to("md") {
+    padding: spacing("lg") 0 260px;
+  }
+
+  &__wrap {
+    margin-top: 110px;
+
+    @include respond-to("md") {
+      @include flex($align: center);
+      margin-top: 236px;
+    }
+  }
+
   &__container {
     position: relative;
-    margin: 110px 20px 0 0;
+    margin-left: spacing("md");
+    margin-right: spacing("xl");
     z-index: 1;
+
+    @include respond-to("md") {
+      min-width: 356px;
+      margin-left: spacing("xl");
+      margin-top: spacing("xxxl");
+    }
 
     &::after {
       content: "";
@@ -22,71 +42,104 @@
       height: calc(100% + 40px);
       border: 10px solid #7572ff;
       z-index: -1;
+
+      @include respond-to("md") {
+        border-width: 20px;
+        top: -36px;
+        right: -36px;
+        height: calc(100% + 70px);
+      }
     }
   }
 
   &__content {
-    padding: 30px 18px;
+    padding: 30px spacing("md");
     background-color: $color-white;
-    margin-top: spacing('xl');
+    margin-top: spacing("xl");
+
+    @include respond-to("md") {
+      margin-top: 0;
+      padding: 14px spacing("md");
+    }
   }
 
   &__caption {
-    margin-top: spacing('xl');
-    font-weight: 600;
-    font-size: font-size('h2');
+    margin-top: spacing("l");
+    font-weight: font-weight("semibold");
+    font-size: font-size("h2");
     text-transform: uppercase;
+
+    @include respond-to("md") {
+      margin-top: spacing("lg");
+    }
   }
 
   &__buttons {
-    margin-top: spacing('xxl');
+    margin-top: spacing("md");
   }
 
   &__image-container {
     @include flex($justify: center);
-    margin-top: spacing('xxl');
+    margin-top: spacing("xxl");
     overflow: hidden;
+
+    @include respond-to("md") {
+      margin-top: 0;
+    }
   }
 
   &__image {
     width: 100%;
     transform: translateX(20%);
   }
-}
 
-.hero-content {
+  &__info {
+    display: none;
+    color: $color-white;
+
+    @include respond-to("md") {
+      @include flex($justify: space-between);
+      margin-bottom: spacing("l");
+    }
+  }
+
+  &__contacts {
+    @include flex();
+
+    > :nth-child(n + 2) {
+      margin-left: spacing("xxl");
+    }
+  }
+
+  &__contact {
+    @include flex($align: center);
+
+    > :nth-child(n + 2) {
+      margin-left: spacing("md");
+    }
+  }
+
+  &__icon-contact {
+    @include size(15px, 14px);
+    fill: $color-white;
+  }
+
   &__title {
-    font-weight: 600;
-    font-size: font-size('h1');
-    line-height: 1.5;
+    font-weight: font-weight("semibold");
+    font-size: font-size("h1");
+    line-height: line-height("base");
     text-transform: uppercase;
     color: $color-primary;
-  }
 
-  &__description {
-    margin-top: spacing('md');
-    font-size: font-size('base');
-    line-height: 1.5;
-    color: $color-text-secondary;
-  }
-}
-
-.hero {
-  &__content {
-    margin-top: spacing('xl');
-  }
-
-  &__description {
-    margin-top: spacing('md');
-  }
-
-  &__buttons {
-    margin-top: spacing('xxl');
-  }
-
-  &__video {
-    &-button {
-      margin-top: spacing('md');
+    @include respond-to("md") {
+      font-weight: font-weight("bold");
     }
+  }
+
+  &__description {
+    margin-top: spacing("md");
+    font-size: font-size("base");
+    line-height: line-height("base");
+    color: $color-text-secondary;
   }
 }

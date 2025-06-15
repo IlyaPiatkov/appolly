@@ -1,97 +1,41 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .team {
-  padding: spacing('xxl') * 2.8 0 spacing('xxl');
+  @include section-padding;
 
   &__title {
-    text-align: center;
-    @include text-style(font-size('h1'), font-weight('semibold'));
-    text-transform: uppercase;
+    @include section-title;
   }
 
   &__description {
-    margin: spacing('md') auto 0;
-    max-width: spacing('xl') * 10;
-    @include text-style(font-size('base'));
-    text-align: center;
-    color: $color-text-secondary;
+    @include section-description;
+
+    & {
+      color: $color-text-secondary;
+    }
   }
 
   &__container {
-    @include grid($gap: spacing('xl'));
-    margin-top: spacing('xl');
-    
-    @include respond-to('md') {
+    @include grid($gap: spacing("xl"));
+    margin-top: spacing("xl");
+
+    @include respond-to("md") {
       grid-template-columns: repeat(2, 1fr);
     }
-    
-    @include respond-to('lg') {
+
+    @include respond-to("lg") {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-}
 
-// Team member card specific styles
-.team-card {
-  position: relative;
-  padding: spacing('xl') spacing('md') spacing('xxl');
-  border-radius: 10px;
-  background-color: $color-white;
-  @include card-shadow;
+  &__cards {
+    margin-top: spacing("xl");
 
-  &__image {
-      padding: spacing('sm');
-      width: 100%;
-      border-radius: 50%;
-
-      @include transition;
-  
-      @include hover {
-        transform: scale(1.05);
-      }
-      
-    &-container {
-      position: relative;
-      padding: 0 spacing('xl');
+    @include respond-to("md") {
+      margin-top: spacing("l");
     }
-
-  }
-
-  &__border {
-    position: absolute;
-    right: 1px;
-    bottom: 2px;
-    @include size(100%);
-    animation: rotate 100s linear infinite;
-  }
-
-  &__content {
-    text-align: center;
-    margin-top: spacing('xxl');
-  }
-
-  &__name {
-    @include text-style(font-size('h1') * 1.25, font-weight('semibold'));
-    text-transform: uppercase;
-  }
-
-  &__position {
-    margin-top: spacing('xs');
-    @include text-style(font-size('h2'), font-weight('semibold'));
-    text-transform: uppercase;
-    color: $color-text-secondary;
-  }
-
-  &__description {
-    margin-top: spacing('sm');
-    @include text-style(font-size('base'));
-    color: $color-text-secondary;
-  }
-
-  &__social {
-    margin-top: spacing('xl');
   }
 }
 
@@ -101,36 +45,5 @@
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-// Responsive styles
-@include respond-to('md') {
-  .team {
-    &__description {
-      max-width: spacing('xl') * 15;
-    }
-  }
-
-  .team-card {
-    &__image {
-      &-container {
-        padding: 0 spacing('xxl');
-      }
-    }
-
-    &__content {
-      margin-top: spacing('xxl') * 1.5;
-    }
-  }
-}
-
-@include respond-to('lg') {
-  .team {
-    padding: spacing('xxl') * 3 0 spacing('xxl') * 2;
-    
-    &__container {
-      gap: spacing('xxl');
-    }
   }
 }

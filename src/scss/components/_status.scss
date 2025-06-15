@@ -3,17 +3,22 @@
 @use "../abstracts/functions" as *;
 
 .status {
-  margin-top: 60px;
   @include flex($justify: center, $gap: spacing("md"));
 
   &__item {
     @include flex($direction: column, $align: center);
-    min-width: 96px;
-    padding: 12px 3px;
+    min-width: 98px;
+    padding: spacing("sm") spacing("xs");
     border-radius: 5px;
     background-color: $color-primary;
     color: $color-white;
     @include card-shadow;
+
+    &:hover {
+      @include hover {
+        transform: translateY(-2px);
+      }
+    }
   }
 
   &__icon {
@@ -22,9 +27,12 @@
   }
 
   &__number {
-    margin-top: 6px;
-    font-weight: 600;
-    font-size: font-size("h2");
-    line-height: line-height("base");
+    margin-top: spacing("xs");
+    @include text-style(font-size("h2"), font-weight("semibold"));
+  }
+
+  &__text {
+    @include text-style(font-size("base"));
+    text-align: center;
   }
 }

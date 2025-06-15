@@ -3,8 +3,6 @@
 @use '../abstracts/functions' as *;
 
 .plates {
-  margin-top: spacing('xxl');
-
   > :nth-child(n + 2) {
     margin-top: spacing('lg');
   }

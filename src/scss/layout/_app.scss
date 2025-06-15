@@ -3,10 +3,13 @@
 @use "../abstracts/functions" as *;
 
 .app {
-  padding: 40px 0 120px;
-  background-image: url("/desktop-3.png");
-  background-size: cover;
-  color: $color-white;
+  @include section-padding;
+
+  & {
+    background-image: url("/desktop-3.png");
+    background-size: cover;
+    color: $color-white;
+  }
 
   &__title {
     @include section-title;
@@ -14,12 +17,35 @@
 
   &__description {
     @include section-description;
+
+    @include respond-to("md") {
+      margin-top: spacing("xxxl");
+    }
   }
 
   &__container {
     display: grid;
-    grid-gap: 40px 0;
-    margin-top: 32px;
+    row-gap: spacing("xl");
+    grid-template-areas:
+      "comment"
+      "browser"
+      "vector"
+      "img"
+      "phone"
+      "scanner"
+      "telemarketer";
+    margin-top: spacing("l");
+
+    @include respond-to("md") {
+      column-gap: spacing("md");
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "comment comment comment"
+        "browser img phone"
+        "vector img scanner"
+        "telemarketer telemarketer telemarketer";
+      margin-top: spacing("xxxl");
+    }
   }
 
   &__item {
@@ -27,7 +53,7 @@
 
     &-title {
       max-width: 270px;
-      margin-top: spacing("xl");
+      margin-top: spacing("l");
       font-weight: 600;
       font-size: font-size("h2");
       line-height: 1.5;
@@ -37,10 +63,56 @@
 
     &-description {
       margin-top: spacing("md");
-      padding: 0 50px;
+      max-width: 225px;
       font-size: font-size("base");
       line-height: 1.5;
       text-align: center;
+    }
+
+    &_left {
+      @include respond-to("md") {
+        align-items: flex-start;
+
+        .app__item-title,
+        .app__item-description {
+          text-align: left;
+        }
+      }
+    }
+
+    &_right {
+      @include respond-to("md") {
+        align-items: flex-end;
+
+        .app__item-title,
+        .app__item-description {
+          text-align: right;
+        }
+      }
+    }
+
+    &_browser {
+      grid-area: browser;
+    }
+
+    &_comment {
+      grid-area: comment;
+    }
+
+    &_vector {
+      grid-area: vector;
+    }
+
+    &_phone {
+      grid-area: phone;
+    }
+
+    &_scanner {
+      grid-area: scanner;
+    }
+
+    &_telemarketer {
+      grid-area: telemarketer;
     }
   }
 
@@ -57,14 +129,15 @@
 
     &-container {
       padding: 0 80px;
+      grid-area: img;
+
+      @include respond-to("md") {
+        padding: 0;
+      }
     }
   }
 
   &__content {
-    margin-top: spacing("xl");
-  }
-
-  &__description {
     margin-top: spacing("xl");
   }
 

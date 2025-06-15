@@ -37,6 +37,11 @@ new Swiper("#screenshot-swiper", {
     prevEl: ".swiper__prev",
   },
   slideActiveClass: "swiper__slide_active",
+  breakpoints: {
+    768: {
+      slidesPerView: 4,
+    },
+  },
 });
 
 new Swiper("#feedback-swiper", {
@@ -47,6 +52,7 @@ new Swiper("#feedback-swiper", {
   spaceBetween: -340,
   effect: "coverflow",
   grabCursor: true,
+  centeredSlides: true,
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
@@ -61,5 +67,11 @@ new Swiper("#feedback-swiper", {
     clickable: true,
     bulletClass: "swiper__bullet",
     bulletActiveClass: "swiper__bullet_active",
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: -500,
+    },
   },
 });

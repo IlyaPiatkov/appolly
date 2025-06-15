@@ -1,184 +1,82 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .screenshot {
   @include section-padding;
 
   &__title {
-    margin: auto;
-    max-width: spacing('xl') * 10;
-    @include text-style(font-size('h1'), font-weight('semibold'));
-    text-transform: uppercase;
-    text-align: center;
+    @include section-title;
+
+    &_bottom {
+      @include respond-to("md") {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
+      }
+    }
   }
 
   &__description {
-    margin: auto;
-    max-width: spacing('xl') * 10;
-    margin-top: spacing('md');
-    @include text-style(font-size('base'));
-    text-align: center;
-    color: $color-text-secondary;
+    @include section-description;
+
+    & {
+      color: $color-text-secondary;
+    }
+
+    &_bottom {
+      @include respond-to("md") {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
+      }
+    }
   }
 
   &__slider {
-    margin-top: spacing('xl');
-  }
-
-  &__caption {
-    width: 250px;
-    margin-top: spacing('xxl');
-    @include text-style(font-size('h1'), font-weight('semibold'));
-    text-transform: uppercase;
+    margin-top: spacing("xl");
   }
 
   &__buttons {
-    @include flex($justify: center);
-    margin-top: spacing('xxl');
-    gap: spacing('lg');
+    margin-top: spacing("xl");
+    grid-area: buttons;
+    gap: spacing("lg");
+
+    @include respond-to("md") {
+      justify-content: flex-start;
+    }
   }
 
   &__img-container {
-    margin-top: spacing('xxl');
+    margin-top: spacing("xxl");
+
+    @include respond-to("md") {
+      margin-top: auto;
+      max-width: 350px;
+    }
+
+    @include respond-to("xl") {
+      max-width: 516px;
+    }
   }
 
   &__image {
     width: 100%;
     height: auto;
   }
-}
 
-// Status component within screenshot section
-.status {
-  margin-top: spacing('xxl');
-  @include flex($justify: center, $gap: spacing('md'));
-
-  &__item {
-    @include flex($direction: column, $align: center);
-    min-width: 96px;
-    padding: spacing('sm') spacing('xs');
-    border-radius: 5px;
-    background-color: $color-primary;
-    color: $color-white;
-    @include card-shadow;
-
-    &:hover {
-      @include hover {
-        transform: translateY(-2px);
-      }
+  &__container {
+    @include respond-to("md") {
+      @include flex($align: flex-end, $justify: center, $gap: 28px);
     }
   }
 
-  &__icon {
-    @include size(18px);
-    fill: $color-white;
-  }
+  &__status {
+    margin-top: spacing("xxxl");
 
-  &__number {
-    margin-top: spacing('xs');
-    @include text-style(font-size('h2'), font-weight('semibold'));
-  }
-
-  &__text {
-    @include text-style(font-size('base'));
-    text-align: center;
-  }
-}
-
-// Swiper component styles within screenshot section
-.swiper {
-  &__image {
-    display: block;
-    width: 100%;
-    border-radius: 10px;
-    @include card-shadow;
-  }
-
-  &__slide {
-    background-position: center;
-    background-size: cover;
-    width: 228px;
-    opacity: 0.9;
-    @include transition(opacity);
-
-    &_active {
-      opacity: 1;
-    }
-  }
-
-  &__pagination {
-    margin-top: spacing('xl');
-    @include flex($justify: center, $gap: spacing('md'));
-    padding: spacing('xs');
-  }
-
-  &__bullet {
-    position: relative;
-    @include size(16px);
-    border-radius: 50%;
-    background-color: $color-primary;
-    cursor: pointer;
-    @include transition;
-
-    &_active::after {
-      content: "";
-      @include position(absolute, 50%, null, null, 50%);
-      @include size(20px);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      border: 1px solid $color-primary;
-    }
-  }
-
-  &__next,
-  &__prev {
-    @include position(absolute, 50%, null, null, null);
-    transform: translateY(-50%);
-    @include size(40px);
-    border-radius: 50%;
-    background-color: $color-white;
-    @include card-shadow;
-    cursor: pointer;
-    z-index: z-index('controls');
-
-    @include hover {
-      background-color: color-opacity($color-primary, 0.1);
-    }
-  }
-
-  &__next {
-    right: spacing('md');
-  }
-
-  &__prev {
-    left: spacing('md');
-  }
-}
-
-@include respond-to('md') {
-  .screenshot {
-    &__title {
-      max-width: spacing('xl') * 15;
-    }
-
-    &__description {
-      max-width: spacing('xl') * 12;
-    }
-
-    &__buttons {
-      gap: spacing('xl');
-    }
-  }
-
-  .swiper {
-    &__slide {
-      width: 300px;
-    }
-
-    &__next,
-    &__prev {
-      @include size(50px);
+    @include respond-to("md") {
+      margin-top: spacing("xl");
+      justify-content: flex-start;
     }
   }
 }

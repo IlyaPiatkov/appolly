@@ -44,11 +44,13 @@ $font-size: (
   "h2": 20px,
   "small": 14px,
   "large": 18px,
+  "xl": 32px,
 );
 
 $font-weight: (
   "regular": 400,
   "semibold": 600,
+  "bold": 700,
 );
 
 $line-height: (
@@ -88,7 +90,7 @@ $breakpoints: (
   "sm": 576px,
   "md": 768px,
   "lg": 992px,
-  "xl": 1200px,
+  "xl": 1440px,
 );
 
 // Transitions

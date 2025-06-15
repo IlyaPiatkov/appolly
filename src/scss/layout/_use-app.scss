@@ -1,13 +1,15 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .use-app {
   @include section-padding;
-  padding-bottom: 126px;
-  background-image: url("/desktop-3.png");
-  background-size: cover;
-  color: $color-white;
+
+  & {
+    padding-bottom: 0;
+    background-color: $color-primary;
+    color: $color-white;
+  }
 
   &__title {
     @include section-title;
@@ -18,18 +20,29 @@
   }
 
   &__container {
-    margin-top: spacing('xl');
-    position: absolute;
-    width: calc(100% - spacing('xl'));
+    margin-top: spacing("xl");
+    background: linear-gradient(180deg, $color-primary 50%, $color-white 50%);
   }
 
   &__video {
-    position: relative;
-    height: 150px;
+    object-fit: cover;
     width: 100%;
+    height: auto;
+  }
+
+  &__wrap {
+    position: relative;
+    overflow: hidden;
+    height: 150px;
     border-radius: 10px;
-    background-image: url("/youtube-video.jpg");
-    background-size: cover;
+
+    @include respond-to("md") {
+      height: 230px;
+    }
+
+    @include respond-to("xl") {
+      height: 320px;
+    }
 
     &:hover {
       box-shadow: 0 10px 100px 0 rgba($color-black, 0.3);
@@ -47,14 +60,14 @@
     transform: translate(-50%, -50%);
     @include size(18px);
     fill: $color-primary;
-    z-index: z-index('video-icon');
+    z-index: z-index("video-icon");
   }
 
   &__mask {
     @include position(absolute, 50%, null, null, 50%);
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: z-index('video-mask');
+    z-index: z-index("video-mask");
 
     &_1 {
       @include size(50px);
@@ -70,10 +83,5 @@
       @include size(70px);
       background: rgba($color-white, 0.6);
     }
-  }
-
-  &__image {
-    margin-top: spacing('xl');
-    width: calc(100% - #{spacing('xl')});
   }
 }

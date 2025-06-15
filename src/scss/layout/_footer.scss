@@ -25,7 +25,10 @@
 
   &__title {
     @include section-title;
-    text-align: left;
+
+    & {
+      text-align: left;
+    }
   }
 
   &__links {

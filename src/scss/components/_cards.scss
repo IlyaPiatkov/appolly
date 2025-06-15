@@ -3,26 +3,43 @@
 @use "../abstracts/functions" as *;
 
 .cards {
-  margin-top: spacing("xl");
   @include flex($direction: column, $gap: spacing("xl"));
+
+  @include respond-to("md") {
+    flex-direction: row;
+    gap: 24px;
+  }
 }
 
 .card {
   position: relative;
-  padding: spacing("xl") spacing("sm") spacing("xl");
+  padding: spacing("xl") spacing("sm");
   border-radius: 10px;
+  min-width: 214px;
   background-color: $color-white;
   overflow: hidden;
   @include card-shadow;
+
+  @include respond-to("md") {
+    padding: spacing("l") spacing("md");
+  }
 
   &__image {
     padding: 3%;
     width: 100%;
     border-radius: 50%;
 
+    @include respond-to("md") {
+      padding: 5%;
+    }
+
     &-container {
       position: relative;
       padding: 0 spacing("xl");
+
+      @include respond-to("md") {
+        padding: 0;
+      }
     }
 
     &_rectangle {
@@ -46,6 +63,10 @@
     line-height: line-height("base");
     text-transform: uppercase;
     text-align: center;
+
+    @include respond-to("md") {
+      margin-top: spacing("sm");
+    }
   }
 
   &__position {
@@ -54,6 +75,11 @@
     text-transform: uppercase;
     text-align: center;
     color: $color-text-secondary;
+
+    @include respond-to("md") {
+      font-weight: font-weight("regular");
+      font-size: font-size("base");
+    }
   }
 
   &__description {
@@ -70,6 +96,10 @@
 
   &__social {
     margin-top: spacing("xl");
+
+    @include respond-to("md") {
+      --gap: 28px;
+    }
   }
 
   &__content {
@@ -85,6 +115,10 @@
 
   &__link {
     margin-top: spacing("md");
+
+    @include respond-to("md") {
+      margin-top: spacing("xl");
+    }
   }
 
   &_xs {

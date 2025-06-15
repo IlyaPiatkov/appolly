@@ -3,15 +3,17 @@
 @use "../abstracts/functions" as *;
 
 .social {
-  @include flex($gap: spacing("xxxl"), $justify: center);
+  --gap: 60px;
+
+  @include flex($gap: var(--gap), $justify: center);
 
   &__item {
     position: relative;
 
-    &:nth-child(n + 2)::after {
+    &_divider::after {
       content: "";
       position: absolute;
-      right: 54px;
+      right: calc(100% + calc(var(--gap) / 2));
       @include size(1px, 24px);
       background-color: $color-text-secondary;
     }
@@ -31,10 +33,16 @@
 
   &_start {
     justify-content: left;
-  } 
+  }
+
+  &_xs {
+    --gap: 32px;
+
+    .social__icon {
+      @include size(15px);
+    }
+  }
 }
-
-
 
 @each $platform,
   $color

@@ -3,14 +3,21 @@
 @use "../abstracts/functions" as *;
 
 .blog {
-    @include section-padding;
+  @include section-padding;
 
-    &__title {
-        @include section-title;
-    }
+  &__title {
+    @include section-title;
+  }
 
-    &__description {
-        @include section-description;
-        color: $color-text-secondary;
+  &__description {
+    @include section-description;
+
+    & {
+      color: $color-text-secondary;
     }
+  }
+
+  &__cards {
+    margin-top: spacing("xl");
+  }
 }

@@ -1,15 +1,22 @@
-@use 'sass:map';
-@use 'variables' as *;
-@use 'functions' as *;
+@use "sass:map";
+@use "variables" as *;
+@use "functions" as *;
 
 // Layout
-@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0, $wrap: nowrap) {
+@mixin flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $gap: 0,
+  $wrap: nowrap
+) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
-  @if $gap != 0 {
+
+  @if $gap !=0 {
     gap: $gap;
   }
 }
@@ -17,30 +24,54 @@
 @mixin grid($columns: 1, $gap: 0) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
-  @if $gap != 0 {
+
+  @if $gap !=0 {
     gap: $gap;
   }
 }
 
-@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+@mixin container {
+  padding-left: spacing("md");
+  padding-right: spacing("md");
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1170px;
+
+  @include respond-to("md") {
+    padding-left: spacing("xl");
+    padding-right: spacing("xl");
+  }
+}
+
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
   position: $position;
-  @if $top != null {
+
+  @if $top !=null {
     top: $top;
   }
-  @if $right != null {
+
+  @if $right !=null {
     right: $right;
   }
-  @if $bottom != null {
+
+  @if $bottom !=null {
     bottom: $bottom;
   }
-  @if $left != null {
+
+  @if $left !=null {
     left: $left;
   }
 }
 
 // Typography
 @mixin truncate($lines: 1) {
-  @if $lines == 1 {
+  @if $lines ==1 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -54,9 +85,11 @@
 
 @mixin text-style($size, $weight: null, $line-height: 1.5) {
   font-size: $size;
+
   @if $weight {
     font-weight: $weight;
   }
+
   line-height: $line-height;
 }
 
@@ -71,7 +104,7 @@
 
 // Media queries
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
     @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
@@ -87,7 +120,7 @@
   height: $height;
 }
 
-@mixin pseudo($display: block, $pos: absolute, $content: '') {
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
   content: $content;
   display: $display;
   position: $pos;
@@ -101,22 +134,36 @@
 // Section Styles
 @mixin section-padding {
   padding: 60px 0;
+
+  @include respond-to("md") {
+    padding: 120px 0;
+  }
 }
 
 @mixin section-title {
-  font-weight: 600;
-  font-size: font-size('h1');
-  line-height: 1.5;
+  margin: auto;
+  font-weight: font-weight("semibold");
+  font-size: font-size("h1");
+  line-height: line-height("base");
   text-transform: uppercase;
   text-align: center;
+
+  @include respond-to("md") {
+    font-weight: font-weight("bold");
+    font-size: font-size("xl");
+  }
 }
 
 @mixin section-description {
-  margin: spacing('md') auto 0;
+  margin: spacing("md") auto 0;
   max-width: 300px;
-  font-size: font-size('base');
-  line-height: 1.5;
+  font-size: font-size("base");
+  line-height: line-height("base");
   text-align: center;
+
+  @include respond-to("md") {
+    max-width: 450px;
+  }
 }
 
 @mixin card-shadow {
@@ -151,7 +198,7 @@
 
 // Typography
 @mixin truncate($lines: 1) {
-  @if $lines == 1 {
+  @if $lines ==1 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -165,9 +212,11 @@
 
 @mixin text-style($size, $weight: null, $line-height: 1.5) {
   font-size: $size;
+
   @if $weight {
     font-weight: $weight;
   }
+
   line-height: $line-height;
 }
 

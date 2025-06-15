@@ -1,6 +1,6 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .swiper {
   &__image {
@@ -23,18 +23,22 @@
   }
 
   &__pagination {
-    margin-top: spacing('xl');
-    @include flex($justify: center, $gap: spacing('md'));
-    padding: spacing('xs');
+    margin-top: spacing("xl");
+    @include flex($justify: center, $gap: spacing("md"));
+    padding: spacing("xs");
+
+    @include respond-to("md") {
+      margin-top: spacing("xxxl");
+    }
 
     &_white {
-        .swiper__bullet {
-          background-color: $color-white;
-        }
-    
-        .swiper__bullet_active::after {
-          border: 1px solid $color-white;
-        }
+      .swiper__bullet {
+        background-color: $color-white;
+      }
+
+      .swiper__bullet_active::after {
+        border: 1px solid $color-white;
+      }
     }
   }
 
@@ -55,8 +59,37 @@
   }
 
   &__buttons {
-    margin-top: spacing('xl');
-    @include flex($justify: center, $gap: spacing('md'));
-    padding: spacing('xs');
+    margin-top: spacing("xl");
+    @include flex($justify: center, $gap: spacing("md"));
+    padding: spacing("xs");
+  }
+
+  &__next,
+  &__prev {
+    display: none;
+    @include position(absolute, 50%, null, null, null);
+    transform: translateY(-50%);
+    @include size(84px);
+    border-radius: 50%;
+    background-color: $color-white;
+    @include card-shadow;
+    cursor: pointer;
+    z-index: z-index("controls");
+
+    @include hover {
+      background-color: color-opacity($color-primary, 0.1);
+    }
+
+    @include respond-to("xl") {
+      display: block;
+    }
+  }
+
+  &__next {
+    right: spacing("md");
+  }
+
+  &__prev {
+    left: spacing("md");
   }
 }
