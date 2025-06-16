@@ -10,17 +10,29 @@
   background-color: $color-primary-dark;
   color: $color-white;
 
+  @include respond-to("md") {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: spacing("lg");
+    align-items: end;
+  }
+
   &__logo {
-    font-size: 32px;
+    font-weight: font-weight("bold");
+    font-size: font-size("xl");
     text-transform: uppercase;
   }
 
   &__text {
     margin-top: spacing("xs");
+
+    @include respond-to("md") {
+      margin-top: 12px;
+    }
   }
 
   &__socials {
     margin-top: spacing("l");
+    --gap: 40px;
   }
 
   &__title {
@@ -28,6 +40,11 @@
 
     & {
       text-align: left;
+    }
+
+    @include respond-to("md") {
+      font-weight: font-weight("semibold");
+      font-size: font-size("h2");
     }
   }
 
@@ -37,11 +54,23 @@
     & > :nth-child(n + 2) {
       margin-top: spacing("md");
     }
+
+    @include respond-to("md") {
+      margin-top: 12px;
+
+      & > :nth-child(n + 2) {
+        margin-top: 12px;
+      }
+    }
   }
 
   &__form {
     position: relative;
     margin-top: spacing("xxl");
+
+    @include respond-to("md") {
+      margin-top: spacing("l");
+    }
   }
 
   &__input {
@@ -69,6 +98,12 @@
   &__content {
     &_divider {
       border-top: 1px solid $color-white;
+    }
+
+    &_copyright {
+      @include respond-to("md") {
+        grid-column: 1 / 4;
+      }
     }
   }
 

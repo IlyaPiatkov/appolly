@@ -4,15 +4,44 @@
 
 .contact {
   text-align: center;
-  background: linear-gradient(180deg, $color-white 50%, $color-primary-dark 50%);
+  background: linear-gradient(
+    180deg,
+    $color-white 50%,
+    $color-primary-dark 50%
+  );
+
+  &__container {
+    padding: spacing("l") spacing("sm");
+    display: grid;
+    gap: spacing("l");
+
+    @include respond-to("md") {
+      padding: spacing("lg") spacing("md");
+      grid-template-columns: 1fr auto 1fr;
+      gap: spacing("xxl");
+      min-height: 150px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: spacing("md");
+    justify-items: center;
+    
+    @include respond-to("md") {
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      justify-items: start;
+    }
+  }
 
   &__icon {
     @include size(17px, 15px);
     fill: $color-white;
-  }
 
-  &__icon-wrap {
-    @include flex($justify: center);
+    @include respond-to("md") {
+      @include size(20px, 18px);
+    }
   }
 
   &__icon-container {
@@ -20,26 +49,44 @@
     @include size(50px);
     border-radius: 50%;
     background-color: $color-primary;
+
+    @include respond-to("md") {
+      @include size(60px);
+    }
   }
 
   &__text {
-    display: inline-block;
-    margin-top: spacing("md");
     font-size: font-size("h2");
     font-weight: font-weight("semibold");
     line-height: line-height("base");
     text-transform: uppercase;
+
+    @include respond-to("md") {
+      font-size: font-size("large");
+      font-weight: font-weight("base");
+      text-transform: lowercase;
+    }
   }
 
   &__divider {
-    padding: spacing("md") 30% spacing("lg");
+    padding: 0 30%;
     height: 4px;
+
+    @include respond-to("md") {
+      padding: 0;
+      height: auto;
+      width: 4px;
+    }
 
     &::after {
       content: "";
       display: block;
       height: 4px;
-      background-color: $color-black;
+      background-color: #6C6C72;
+
+      @include respond-to("md") {
+        height: 100%;
+      }
     }
   }
 }
