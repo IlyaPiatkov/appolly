@@ -24,6 +24,10 @@
       @include flex($gap: spacing("xxxl"));
       margin-top: spacing("xxxl");
     }
+
+    @include respond-to("xl") {
+      gap: 190px;
+    }
   }
 
   &__plates {
@@ -31,6 +35,7 @@
 
     @include respond-to("md") {
       min-width: 390px;
+      width: 60%;
       margin-top: 0;
     }
   }
@@ -42,6 +47,7 @@
 
     @include respond-to("md") {
       margin: 0;
+      width: 40%;
     }
 
     &::after {

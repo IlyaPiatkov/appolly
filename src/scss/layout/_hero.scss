@@ -11,12 +11,23 @@
     padding: spacing("lg") 0 260px;
   }
 
+  @include respond-to("xl") {
+    padding: spacing("l") 0 80px;
+  }
+
   &__wrap {
     margin-top: 110px;
 
     @include respond-to("md") {
       @include flex($align: center);
       margin-top: 236px;
+    }
+
+    @include respond-to("xl") {
+      margin-top: 80px;
+      max-width: 1170px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -30,6 +41,10 @@
       min-width: 356px;
       margin-left: spacing("xl");
       margin-top: spacing("xxxl");
+    }
+
+    @include respond-to("xl") {
+      margin-left: 0;
     }
 
     &::after {
@@ -61,6 +76,10 @@
       margin-top: 0;
       padding: 14px spacing("md");
     }
+
+    @include respond-to("xl") {
+      padding: spacing("xl") spacing("lg");
+    }
   }
 
   &__caption {
@@ -72,25 +91,37 @@
     @include respond-to("md") {
       margin-top: spacing("lg");
     }
+
+    @include respond-to("xl") {
+      margin-top: spacing("xxl");
+    }
   }
 
   &__buttons {
     margin-top: spacing("md");
+    justify-content: flex-start;
   }
 
   &__image-container {
-    @include flex($justify: center);
     margin-top: spacing("xxl");
     overflow: hidden;
 
     @include respond-to("md") {
       margin-top: 0;
     }
+
+    @include respond-to("xl") {
+      overflow: visible;
+    }
   }
 
   &__image {
     width: 100%;
     transform: translateX(20%);
+
+    @include respond-to("xl") {
+      transform: translateX(25%);
+    }
   }
 
   &__info {
@@ -100,6 +131,10 @@
     @include respond-to("md") {
       @include flex($justify: space-between);
       margin-bottom: spacing("l");
+    }
+
+    @include respond-to("xl") {
+      margin-bottom: spacing("md");
     }
   }
 
@@ -133,6 +168,10 @@
 
     @include respond-to("md") {
       font-weight: font-weight("bold");
+    }
+
+    @include respond-to("xl") {
+      font-size: 48px;
     }
   }
 

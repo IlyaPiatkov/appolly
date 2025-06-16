@@ -1,5 +1,6 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .hamburger {
   position: relative;
@@ -13,6 +14,10 @@
   border: none;
   background-color: transparent;
   color: transparent;
+
+  @include respond-to("xl") {
+    display: none;
+  }
 
   &__line {
     &,
@@ -48,6 +53,14 @@
   z-index: 100;
   transition: left 0.3s ease-in-out;
 
+  @include respond-to("xl") {
+    position: static;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 0;
+  }
+
   &_open {
     left: 0;
   }
@@ -64,6 +77,10 @@
     color: $color-white;
     cursor: pointer;
 
+    @include respond-to("xl") {
+      display: none;
+    }
+
     &:hover {
       background: $color-primary-light;
     }
@@ -77,11 +94,28 @@
 
     &:hover {
       text-decoration: underline;
+      color: $color-primary;
     }
   }
 
-  &__container > :nth-child(n + 2) {
-    margin-top: 25px;
+  &__container {
+    & > :nth-child(n + 2) {
+      margin-top: 25px;
+    }
+
+    @include respond-to("xl") {
+      display: flex;
+      margin-top: 6px;
+
+      > :nth-child(n + 2) {
+        margin-top: 0;
+        margin-left: spacing("xl");
+      }
+
+      .menu__item_space {
+        margin-left: 360px;
+      }
+    }
   }
 }
 

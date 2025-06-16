@@ -1,5 +1,6 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .header {
   @include flex($justify: space-between, $align: center);
@@ -8,6 +9,15 @@
   border-radius: 5px;
   background-color: $color-white;
   box-shadow: $shadow-default;
+
+  @include respond-to("md") {
+    height: 60px;
+    padding: 5px 5px 5px 18px;
+  }
+
+  @include respond-to("xl") {
+    padding-left: 50px;
+  }
 
   &__logo-container {
     position: absolute;
@@ -18,5 +28,15 @@
     border-radius: 5px;
     background-color: $color-white;
     box-shadow: $shadow-default;
+
+    @include respond-to("md") {
+      padding: 30px 16px;
+    }
+  }
+
+  &__logo {
+    @include respond-to("md") {
+      @include size(167px, 28px);
+    }
   }
 }
