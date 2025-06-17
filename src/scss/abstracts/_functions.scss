@@ -1,6 +1,6 @@
-@use 'sass:map';
-@use 'sass:list';
-@use 'variables' as *;
+@use "sass:map";
+@use "sass:list";
+@use "variables" as *;
 
 // Typography
 @function font($family) {
@@ -26,11 +26,11 @@
 
 // Animation
 @function animation-duration($speed) {
-  @return map.get(map.get($animation, 'duration'), $speed);
+  @return map.get(map.get($animation, "duration"), $speed);
 }
 
 @function animation-timing($curve) {
-  @return map.get(map.get($animation, 'timing'), $curve);
+  @return map.get(map.get($animation, "timing"), $curve);
 }
 
 // Z-index
@@ -38,7 +38,7 @@
   @if list.index($z-layers, $layer) {
     @return (list.length($z-layers) - list.index($z-layers, $layer)) + 1;
   }
-  
+
   @warn "Layer `#{$layer}` not found in $z-layers. Valid layers are: #{$z-layers}";
   @return null;
 }

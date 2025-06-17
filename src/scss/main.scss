@@ -29,7 +29,7 @@
 @use "layout/footer";
 
 .container {
- @include container;
+  @include container;
 
   &_top {
     margin-top: spacing("xxl");
