@@ -17,10 +17,6 @@
 
   &__description {
     @include section-description;
-
-    @include respond-to("md") {
-      margin-top: spacing("xxxl");
-    }
   }
 
   &__container {
@@ -45,6 +41,10 @@
         "vector img scanner"
         "telemarketer telemarketer telemarketer";
       margin-top: spacing("xxxl");
+    }
+
+    @include respond-to("xl") {
+      gap: spacing("xxxl");
     }
   }
 

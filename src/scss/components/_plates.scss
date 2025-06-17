@@ -1,20 +1,28 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
 
 .plates {
   > :nth-child(n + 2) {
-    margin-top: spacing('lg');
+    margin-top: spacing("lg");
+
+    @include respond-to("xl") {
+      margin-top: spacing("xl");
+    }
   }
 }
 
 .plate {
   position: relative;
-  padding: spacing('md') spacing('md') spacing('sm') 60px;
+  padding: spacing("md") spacing("md") spacing("sm") spacing("xxxl");
   border-radius: 5px;
   background-color: $color-white;
   box-shadow: $shadow-default;
   transition: $transition-slow;
+
+  @include respond-to("xl") {
+    padding: spacing("md") spacing("md") spacing("md") spacing("xxxl");
+  }
 
   &:hover {
     box-shadow: $shadow-hover;
@@ -30,9 +38,9 @@
 
   &__description {
     position: relative;
-    margin-top: spacing('xs');
-    font-size: spacing('base');
-    line-height: spacing('base');
+    margin-top: spacing("xs");
+    font-size: spacing("base");
+    line-height: spacing("base");
     color: $color-text-secondary;
   }
 

@@ -47,6 +47,7 @@
     @include size(16px);
     border-radius: 50%;
     background-color: $color-primary;
+    cursor: pointer;
 
     &_active::after {
       content: "";
@@ -71,13 +72,18 @@
     transform: translateY(-50%);
     @include size(84px);
     border-radius: 50%;
+    border: 1px solid $color-primary;
     background-color: $color-white;
     @include card-shadow;
     cursor: pointer;
     z-index: z-index("controls");
 
     @include hover {
-      background-color: color-opacity($color-primary, 0.1);
+      background-color: $color-primary;
+
+      .swiper__icon {
+        fill: $color-white;
+      }
     }
 
     @include respond-to("xl") {
@@ -85,8 +91,19 @@
     }
   }
 
+  &__icon {
+    @include size(16px, 26px);
+    @include position(absolute, 50%, null, null, 50%);
+    transform: translate(-50%, -50%);
+    fill: $color-primary;
+  }
+
   &__next {
     right: spacing("md");
+
+    .swiper__icon {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
   }
 
   &__prev {

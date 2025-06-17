@@ -6,10 +6,14 @@
   display: grid;
   gap: spacing("xl");
   align-items: start;
-  
+
   @include respond-to("md") {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+  }
+
+  @include respond-to("xl") {
+    gap: 30px;
   }
 }
 
@@ -38,6 +42,8 @@
     &-container {
       position: relative;
       padding: 0 spacing("xl");
+      max-width: 220px;
+      margin: auto;
 
       @include respond-to("md") {
         padding: 0;
@@ -69,6 +75,11 @@
     @include respond-to("md") {
       margin-top: spacing("sm");
     }
+
+    @include respond-to("xl") {
+      margin-top: spacing("xxxl");
+      font-size: font-size("xl");
+    }
   }
 
   &__position {
@@ -81,6 +92,10 @@
     @include respond-to("md") {
       font-weight: font-weight("regular");
       font-size: font-size("base");
+    }
+
+    @include respond-to("xl") {
+      font-size: font-size("h2");
     }
   }
 
@@ -129,7 +144,11 @@
     padding: spacing("md") spacing("sm");
 
     .card__image-container {
-      padding: 0 140px;
+      padding: 0 85px;
+
+      @include respond-to("xl") {
+        padding: 0 spacing("xxxl");
+      }
     }
 
     .card__name {

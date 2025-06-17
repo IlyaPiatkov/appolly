@@ -19,5 +19,9 @@
 
   &__cards {
     margin-top: spacing("xl");
+
+    @include respond-to("xl") {
+      margin-top: spacing("xxxl");
+    }
   }
 }

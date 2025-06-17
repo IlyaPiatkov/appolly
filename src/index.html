@@ -352,8 +352,16 @@
               />
             </div>
           </div>
-          <div class="swiper__next"></div>
-          <div class="swiper__prev"></div>
+          <div class="swiper__next" aria-label="Next slide">
+            <svg class="swiper__icon">
+              <use xlink:href="/sprite.svg#arrow" />
+            </svg>
+          </div>
+          <div class="swiper__prev" aria-label="Previous slide">
+            <svg class="swiper__icon">
+              <use xlink:href="/sprite.svg#arrow" />
+            </svg>
+          </div>
           <div class="swiper__pagination"></div>
         </div>
       </div>
@@ -763,87 +771,96 @@
       </div>
     </section>
 
-    <footer class="footer container">
-      <div class="footer__content">
-        <h2 class="footer__logo">Logo</h2>
-        <p class="footer__text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc
-          ante velit vitae.
-        </p>
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__content">
+          <h2 class="footer__logo">Logo</h2>
+          <p class="footer__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+            nunc ante velit vitae.
+          </p>
 
-        <div class="social social_white social_start footer__socials">
-          <a class="social__item" href="#">
-            <svg class="social__icon social__icon_facebook">
-              <use xlink:href="/sprite.svg#facebook-fill" />
-            </svg>
-          </a>
-          <a class="social__item social__item_divider" href="#">
-            <svg class="social__icon social__icon_instagram">
-              <use xlink:href="/sprite.svg#instagram-fill" />
-            </svg>
-          </a>
-          <a class="social__item social__item_divider" href="#">
-            <svg class="social__icon social__icon_twitter">
-              <use xlink:href="/sprite.svg#twitter-fill" />
-            </svg>
-          </a>
-          <a class="social__item social__item_divider" href="#">
-            <svg class="social__icon social__icon_youtube">
-              <use xlink:href="/sprite.svg#youtube-fill" />
-            </svg>
-          </a>
+          <div class="social social_white social_start footer__socials">
+            <a class="social__item" href="#">
+              <svg class="social__icon social__icon_facebook">
+                <use xlink:href="/sprite.svg#facebook-fill" />
+              </svg>
+            </a>
+            <a class="social__item social__item_divider" href="#">
+              <svg class="social__icon social__icon_instagram">
+                <use xlink:href="/sprite.svg#instagram-fill" />
+              </svg>
+            </a>
+            <a class="social__item social__item_divider" href="#">
+              <svg class="social__icon social__icon_twitter">
+                <use xlink:href="/sprite.svg#twitter-fill" />
+              </svg>
+            </a>
+            <a class="social__item social__item_divider" href="#">
+              <svg class="social__icon social__icon_youtube">
+                <use xlink:href="/sprite.svg#youtube-fill" />
+              </svg>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="footer__content">
-        <h3 class="footer__title">Quick Links</h3>
-        <ul class="footer__links">
-          <li class="footer__link-item">
-            <a class="footer__link" href="#about" data-anchor="about">About</a>
-          </li>
-          <li class="footer__link-item">
-            <a class="footer__link" href="#features" data-anchor="features"
-              >Features</a
-            >
-          </li>
-          <li class="footer__link-item">
-            <a class="footer__link" href="#screenshot" data-anchor="screenshot"
-              >Screenshot</a
-            >
-          </li>
-          <li class="footer__link-item">
-            <a class="footer__link" href="#blog" data-anchor="blog">Blog</a>
-          </li>
-        </ul>
-      </div>
+        <div class="footer__content">
+          <h3 class="footer__title">Quick Links</h3>
+          <ul class="footer__links">
+            <li class="footer__link-item">
+              <a class="footer__link" href="#about" data-anchor="about"
+                >About</a
+              >
+            </li>
+            <li class="footer__link-item">
+              <a class="footer__link" href="#features" data-anchor="features"
+                >Features</a
+              >
+            </li>
+            <li class="footer__link-item">
+              <a
+                class="footer__link"
+                href="#screenshot"
+                data-anchor="screenshot"
+                >Screenshot</a
+              >
+            </li>
+            <li class="footer__link-item">
+              <a class="footer__link" href="#blog" data-anchor="blog">Blog</a>
+            </li>
+          </ul>
+        </div>
 
-      <div class="footer__content">
-        <h3 class="footer__title">news letter</h3>
-        <p class="footer__text">
-          Subscribe our newsletter to get our latest update & news
-        </p>
+        <div class="footer__content">
+          <h3 class="footer__title">news letter</h3>
+          <p class="footer__text">
+            Subscribe our newsletter to get our latest update & news
+          </p>
 
-        <form id="subscribe-form" class="footer__form">
-          <input
-            class="footer__input"
-            type="email"
-            name="email"
-            placeholder="Your email address"
-            required
-          />
-          <button class="button button_primary footer__button" type="submit">
-            <svg class="footer__icon-button">
-              <use xlink:href="/sprite.svg#send-plane-2-fill" />
+          <form id="subscribe-form" class="footer__form">
+            <input
+              class="footer__input"
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              required
+            />
+            <button class="button button_primary footer__button" type="submit">
+              <svg class="footer__icon-button">
+                <use xlink:href="/sprite.svg#send-plane-2-fill" />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div
+          class="footer__content footer__content_divider footer__content_copyright"
+        >
+          <div class="footer__copyright">
+            <svg class="footer__icon-copyright">
+              <use xlink:href="/sprite.svg#copyright-line" />
             </svg>
-          </button>
-        </form>
-      </div>
-      <div class="footer__content footer__content_divider footer__content_copyright">
-        <div class="footer__copyright">
-          <svg class="footer__icon-copyright">
-            <use xlink:href="/sprite.svg#copyright-line" />
-          </svg>
-          <p>Copyright 2021 .Ojjomedia. All Right Reserved.</p>
+            <p>Copyright 2021 .Ojjomedia. All Right Reserved.</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -3,17 +3,28 @@
 @use "../abstracts/functions" as *;
 
 .footer {
-  display: grid;
-  gap: spacing("xxxl") 0;
   padding-top: spacing("xxxl");
   padding-bottom: spacing("md");
   background-color: $color-primary-dark;
   color: $color-white;
 
-  @include respond-to("md") {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: spacing("lg");
-    align-items: end;
+  @include respond-to("xl") {
+    padding-top: 120px;
+  }
+
+  &__container {
+    display: grid;
+    gap: spacing("xxxl") 0;
+
+    @include respond-to("md") {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: spacing("lg");
+      align-items: end;
+    }
+
+    @include respond-to("xl") {
+      column-gap: spacing("xxxl");
+    }
   }
 
   &__logo {

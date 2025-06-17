@@ -5,6 +5,10 @@
 .status {
   @include flex($justify: center, $gap: spacing("md"));
 
+  @include respond-to("xl") {
+    gap: spacing("lg");
+  }
+
   &__item {
     @include flex($direction: column, $align: center);
     min-width: 98px;
@@ -14,25 +18,38 @@
     color: $color-white;
     @include card-shadow;
 
-    &:hover {
-      @include hover {
-        transform: translateY(-2px);
-      }
+    @include respond-to("xl") {
+      gap: spacing("md");
+      padding: spacing("md") 10px;
+      min-width: 170px;
     }
   }
 
   &__icon {
     @include size(18px);
     fill: $color-white;
+
+    @include respond-to("xl") {
+      @include size(35px);
+    }
   }
 
   &__number {
     margin-top: spacing("xs");
     @include text-style(font-size("h2"), font-weight("semibold"));
+
+    @include respond-to("xl") {
+      font-size: font-size("h1");
+    }
   }
 
   &__text {
     @include text-style(font-size("base"));
     text-align: center;
+
+    @include respond-to("xl") {
+      @include text-style(font-size("h2"), font-weight("semibold"));
+      text-transform: uppercase;
+    }
   }
 }

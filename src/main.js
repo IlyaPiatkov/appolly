@@ -20,7 +20,7 @@ new Swiper("#screenshot-swiper", {
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
-    depth: 100,
+    depth: 120,
     modifier: 1,
     slideShadows: false,
     scale: 0.9,
@@ -48,7 +48,7 @@ new Swiper("#feedback-swiper", {
   autoplay: {
     delay: 3000,
   },
-  slidesPerView: 3,
+  slidesPerView: 2,
   spaceBetween: -340,
   effect: "coverflow",
   grabCursor: true,
@@ -70,8 +70,21 @@ new Swiper("#feedback-swiper", {
   },
   breakpoints: {
     768: {
-      slidesPerView: 2,
-      spaceBetween: -500,
+      spaceBetween: 0,
+      coverflowEffect: {
+        stretch: 535,
+        depth: 0,
+      },
+    },
+    1024: {
+      coverflowEffect: {
+        stretch: 250,
+      },
+    },
+    1440: {
+      coverflowEffect: {
+        stretch: 290,
+      },
     },
   },
 });
