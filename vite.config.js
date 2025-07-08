@@ -7,6 +7,7 @@ export default defineConfig({
     outDir: "../dist",
     emptyOutDir: true,
   },
+  base: "/appolly/",
   publicDir: "../public",
   css: {
     preprocessorOptions: {
