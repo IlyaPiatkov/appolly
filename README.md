@@ -2,7 +2,7 @@
 
 A modern, responsive landing page for showcasing mobile applications. Built with modern web technologies and following the 7-1 SASS architecture pattern.
 
-🌐 [View Live Demo](https://appolly-xl.infy.uk/)
+🌐 [View Live Demo](https://ilyapiatkov.github.io/appolly/)
 
 ## 🚀 Features
 
