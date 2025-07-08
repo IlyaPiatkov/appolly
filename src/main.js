@@ -45,11 +45,9 @@ new Swiper("#screenshot-swiper", {
 });
 
 new Swiper("#feedback-swiper", {
-  autoplay: {
-    delay: 3000,
-  },
-  slidesPerView: 2,
-  spaceBetween: -340,
+  // autoplay: {
+  //   delay: 3000,
+  // },
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -71,6 +69,7 @@ new Swiper("#feedback-swiper", {
   breakpoints: {
     768: {
       spaceBetween: 0,
+      slidesPerView: 2,
       coverflowEffect: {
         stretch: 535,
         depth: 0,
@@ -78,12 +77,14 @@ new Swiper("#feedback-swiper", {
     },
     1024: {
       coverflowEffect: {
-        stretch: 250,
+        slidesPerView: 2,
+        stretch: 600,
       },
     },
     1440: {
       coverflowEffect: {
-        stretch: 290,
+        slidesPerView: 2,
+        stretch: 700,
       },
     },
   },

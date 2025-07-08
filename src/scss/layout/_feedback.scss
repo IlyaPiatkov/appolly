@@ -28,10 +28,9 @@
 
   &__swiper {
     margin-top: spacing("xl");
+    @include container;
 
     @include respond-to("md") {
-      @include container;
-
       margin-top: spacing("l");
     }
 
