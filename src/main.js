@@ -45,9 +45,9 @@ new Swiper("#screenshot-swiper", {
 });
 
 new Swiper("#feedback-swiper", {
-  // autoplay: {
-  //   delay: 3000,
-  // },
+  autoplay: {
+    delay: 3000,
+  },
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
